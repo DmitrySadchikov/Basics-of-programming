@@ -27,13 +27,4 @@ public class CocktailSort {
             left++; // увеличиваем левую границу
         } while (left <= right);
     }
-
-    public static void main(String[] args) {
-        int[] array = {3, 1, 5, 8, 1, 0, 6, 4, 6, 7};
-
-        sort(array);
-
-        for (int i : array) System.out.print(i + " "); // вывод массива на экран
-
-    }
 }

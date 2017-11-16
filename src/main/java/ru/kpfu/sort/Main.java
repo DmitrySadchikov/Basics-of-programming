@@ -13,6 +13,7 @@ public class Main {
         int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
         int[] b = a.clone();
         int[] c = a.clone();
+        int[] d = a.clone();
         System.out.println("Сортировка пузырьком: ");
         show(a);
         BubbleSort.sort(a);
@@ -25,5 +26,9 @@ public class Main {
         show(c);
         InsertionSort.sort(c);
         show(c);
+        System.out.println("Сортировка слиянием: ");
+        show(d);
+        MergeSort.sort(d);
+        show(d);
     }
 }

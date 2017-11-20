@@ -8,13 +8,25 @@ public class MergeSort {
         sort(a, 0, a.length - 1);
     }
 
-    private static void  sort(int[] a, int start, int end) {
+    private static void sort(int[] a, int start, int end) {
         if (end <= start)
             return;
         int mid = start + (end - start) / 2;
         sort(a, start, mid);
         sort(a, mid + 1, end);
         merge(a, start, mid, end);
+    }
+
+    public static void nonRecursiveSort(int[] a) {
+        for(int i = 1; i < a.length; i *= 2) {
+            for(int j = 0; j <= a.length - i; j += 2 * i) {
+                merge(a, j, j + i - 1, min(j + 2 * i - 1, a.length - 1));
+            }
+        }
+    }
+
+    private static int min(int left, int right) {
+        return left <= right ? left : right;
     }
 
     private static void merge(int[] a, int start, int mid, int end) {

@@ -9,11 +9,18 @@ public class Main {
         System.out.println();
     }
 
+    public static int[] createArray() {
+        return new int[] {8, 6, 2, 4, 3, 1, 5, 7};
+    }
+
     public static void main(String[] args) {
-        int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-        int[] b = a.clone();
-        int[] c = a.clone();
-        int[] d = a.clone();
+        int[] a = createArray();
+        int[] b = createArray();
+        int[] c = createArray();
+        int[] d = createArray();
+        int[] e = createArray();
+        int[] f = createArray();
+
         System.out.println("Сортировка пузырьком: ");
         show(a);
         BubbleSort.sort(a);
@@ -26,9 +33,17 @@ public class Main {
         show(c);
         InsertionSort.sort(c);
         show(c);
-        System.out.println("Сортировка слиянием: ");
+        System.out.println("Сортировка слиянием с рекурсией: ");
         show(d);
         MergeSort.sort(d);
         show(d);
+        System.out.println("Сортировка слиянием без рекурсии: ");
+        show(e);
+        MergeSort.nonRecursiveSort(e);
+        show(e);
+        System.out.println("Быстрая сортировка: ");
+        show(f);
+        QuickSort.sort(f);
+        show(f);
     }
 }

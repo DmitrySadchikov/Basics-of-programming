@@ -20,7 +20,10 @@ public class MergeSort {
     public static void nonRecursiveSort(int[] a) {
         for(int i = 1; i < a.length; i *= 2) {
             for(int j = 0; j <= a.length - i; j += 2 * i) {
-                merge(a, j, j + i - 1, min(j + 2 * i - 1, a.length - 1));
+                int start = j;
+                int mid = j + i - 1;
+                int end = min(j + 2 * i - 1, a.length - 1);
+                merge(a, start, mid, end);
             }
         }
     }
